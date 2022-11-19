@@ -1,0 +1,19 @@
+﻿<Window x:Class="SearchRankFinder.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Search Rank Finder" Height="300" Width="400">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Margin="10" Width="350">
+            <Label>Keywords</Label>
+            <TextBox Text="{Binding Keywords, Mode=TwoWay}" SpellCheck.IsEnabled="True" Language="en-AU"/>
+            <Label>Url to inspect</Label>
+            <TextBox Text="{Binding UrlToInspect, Mode=TwoWay}" SpellCheck.IsEnabled="True" Language="en-AU"/>
+            <Button Click="ButtonBase_OnClick" Content="Search" Margin="10" Width="120"/>
+            <Label>Results:</Label>
+            <TextBlock Text="{Binding Path=RankingResults, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
